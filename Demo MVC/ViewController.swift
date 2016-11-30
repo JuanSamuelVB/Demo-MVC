@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     @IBAction func deleteButtonClicked() {
-      if selectedUser != nil {
+      if selectedUser != nil && selectedUser! < users.count {
         users.remove(at: selectedUser!)
         usersTableView.deleteRows(at: [IndexPath(row: selectedUser!, section: 0)], with: .fade)
       } else {
@@ -78,10 +78,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell")!
         var label: UILabel
+        
         label = cell.viewWithTag(1) as! UILabel
-        label.text = users[indexPath.row].first_name
+        label.text = users[indexPath.row].first_name + " " + users[indexPath.row].last_name
+        
+        label = cell.viewWithTag(2) as! UILabel
+        label.text = users[indexPath.row].email
         
         return cell
     }
