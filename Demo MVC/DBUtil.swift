@@ -9,5 +9,5 @@
 import SQLite
 
 class DBUtil {
-    static 
+    
 }
