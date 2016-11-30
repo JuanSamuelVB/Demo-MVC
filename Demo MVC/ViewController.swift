@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -22,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        users = DBUtil.instance.getUsers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +34,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let last_name = lastNameTextField.text ?? ""
         let email = emailTextField.text ?? ""
         
-        let user = User(id: 0, first_name: first_name, last_name: last_name, email: email)
-        users.append(user)
-        usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
+        if let id = DBUtil.instance.addUser(first_name, ulast_name: last_name, uemail: email) {
+          let user = User(id: 0, first_name: first_name, last_name: last_name, email: email)
+          users.append(user)
+          usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
+        }
     }
     
     @IBAction func updateButtonClicked() {
@@ -48,9 +50,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           last_name: lastNameTextField.text ?? "",
           email: emailTextField.text ?? "")
 
-          users.remove(at: selectedUser!)
-          users.insert(user, at: selectedUser!)
-          usersTableView.reloadData()
+          if let id = DBUtil.instance.updateUser(id, newUser: user) {
+            users.remove(at: selectedUser!)
+            users.insert(user, at: selectedUser!)
+            usersTableView.reloadData()
+          }
       } else {
         print("No item selected")
       }
@@ -58,8 +62,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBAction func deleteButtonClicked() {
       if selectedUser != nil && selectedUser! < users.count {
-        users.remove(at: selectedUser!)
-        usersTableView.deleteRows(at: [IndexPath(row: selectedUser!, section: 0)], with: .fade)
+        if let id = DBUtil.instance.deleteUser(users[selectedUser!].id!) {
+          users.remove(at: selectedUser!)
+          usersTableView.deleteRows(at: [IndexPath(row: selectedUser!, section: 0)], with: .fade)
+        }
       } else {
         print("No item selected")
       }
