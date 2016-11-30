@@ -96,9 +96,9 @@ class DBUtil {
     let user = users.filter(id == uid)
     do {
       let update = user.update([
-        first_name = newUser.first_name,
-        last_name = newUser.last_name,
-        email = newUser.email
+        first_name <- newUser.first_name,
+        last_name <- newUser.last_name,
+        email <- newUser.email
         ])
       if try db!.run(update) > 0 {
         return true

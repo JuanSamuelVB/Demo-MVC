@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let last_name = lastNameTextField.text ?? ""
         let email = emailTextField.text ?? ""
         
-        if let id = DBUtil.instance.addUser(first_name, ulast_name: last_name, uemail: email) {
+        if DBUtil.instance.addUser(ufirst_name: first_name, ulast_name: last_name, uemail: email) != nil {
           let user = User(id: 0, first_name: first_name, last_name: last_name, email: email)
           users.append(user)
           usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           last_name: lastNameTextField.text ?? "",
           email: emailTextField.text ?? "")
 
-          if let id = DBUtil.instance.updateUser(id, newUser: user) {
+          if DBUtil.instance.updateUser(uid: id, newUser: user) {
             users.remove(at: selectedUser!)
             users.insert(user, at: selectedUser!)
             usersTableView.reloadData()
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBAction func deleteButtonClicked() {
       if selectedUser != nil && selectedUser! < users.count {
-        if let id = DBUtil.instance.deleteUser(users[selectedUser!].id!) {
+        if DBUtil.instance.deleteUser(uid: users[selectedUser!].id!) {
           users.remove(at: selectedUser!)
           usersTableView.deleteRows(at: [IndexPath(row: selectedUser!, section: 0)], with: .fade)
         }
