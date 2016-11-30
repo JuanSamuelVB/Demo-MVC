@@ -20,7 +20,7 @@ class DBUtil {
 
   private init() {
     let path = NSSearchPathForDirectoriesInDomains(
-      .DocumentDirectory, .UserDomainMask, true
+      .documentDirectory, .userDomainMask, true
       ).first!
 
     do {
@@ -35,11 +35,11 @@ class DBUtil {
 
   func createTable() {
     do {
-      try db!.run(contacts.create(ifNotExists: true) { table in 
+      try db!.run(users.create(ifNotExists: true) { table in
       table.column(id, primaryKey: true)
-      table.column(name)
-      table.column(phone, unique: true)
-      table.column(address)
+      table.column(first_name)
+      table.column(last_name)
+      table.column(email)
       })
     } catch {
       print("Unable to create table")
