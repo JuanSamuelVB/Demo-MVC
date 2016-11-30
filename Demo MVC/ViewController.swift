@@ -36,20 +36,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let user = User(id: 0, first_name: first_name, last_name: last_name, email: email)
         users.append(user)
-        usersTableView.insertRows(at: [IndexPath(for: users.count-1, section: 0)], with: .Fade)
+        usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
     }
     
     @IBAction func updateButtonClicked() {
       if selectedUser != nil {
-        let id = users[selectedUser].id!
+        let id = users[selectedUser!].id!
         let user = User(
           id: id,
           first_name: firstNameTextField.text ?? "",
           last_name: lastNameTextField.text ?? "",
           email: emailTextField.text ?? "")
 
-          users.removeAtIndex(selectedUser!)
-          users.insert(user, atIndex: selectedUser!)
+          users.remove(at: selectedUser!)
+          users.insert(user, at: selectedUser!)
           usersTableView.reloadData()
       } else {
         print("No item selected")
@@ -58,8 +58,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBAction func deleteButtonClicked() {
       if selectedUser != nil {
-        users.removeAtIndex(selectedUser)
-        usersTableView.deleteRowsAtIndexPaths([IndexPath(for: selectedUser, section: 0)], withRowAnimation: .Fade)
+        users.remove(at: selectedUser!)
+        usersTableView.deleteRows(at: [IndexPath(row: selectedUser!, section: 0)], with: .fade)
       } else {
         print("No item selected")
       }
