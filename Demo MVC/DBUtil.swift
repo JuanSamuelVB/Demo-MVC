@@ -12,6 +12,8 @@ class DBUtil {
   static let instance = DBUtil()
   private let db: Connection?
 
+  private let dbFileName = "test.sqlite3"
+
   private let users = Table("users")
   private let id = Expression<Int64>("id")
   private let first_name = Expression<String?>("first_name")
@@ -19,18 +21,34 @@ class DBUtil {
   private let email = Expression<String>("email")
 
   private init() {
-    let path = NSSearchPathForDirectoriesInDomains(
-      .documentDirectory, .userDomainMask, true
-      ).first!
+    if !openExistingDatabase() {
+      let path = NSSearchPathForDirectoriesInDomains(
+        .documentDirectory, .userDomainMask, true
+        ).first!
 
-    do {
-      db = try Connection("\(path)/test.sqlite3")
-    } catch {
-      db = nil
-      print("Unable to open database")
+      do {
+        db = try Connection("\(path)/\(dbFileName)")
+      } catch {
+        db = nil
+        print("Unable to open database")
+      }
     }
 
     createTable()
+  }
+
+  func openExistingDatabase() -> Bool {
+    let resourcePath = NSBundle.mainBundle().resource!.absoluteString
+    let dbPath = resourcePath?.stringAppendingPathComponent(dbFileName)
+
+    do {
+      db = try Connection(dbPath)
+      return true
+    } catch {
+      db = nil
+      print("Unable to open preloaded database")
+      return false
+    }
   }
 
   func createTable() {
