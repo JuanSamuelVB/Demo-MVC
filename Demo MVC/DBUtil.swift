@@ -10,9 +10,9 @@ import SQLite
 
 class DBUtil {
   static let instance = DBUtil()
-  private let db: Connection?
+  private var db: Connection?
 
-  private let dbFileName = "test.sqlite3"
+  private let dbFileName = "test"
 
   private let users = Table("users")
   private let id = Expression<Int64>("id")
@@ -27,7 +27,7 @@ class DBUtil {
         ).first!
 
       do {
-        db = try Connection("\(path)/\(dbFileName)")
+        db = try Connection("\(path)/\(dbFileName).sqlite3")
       } catch {
         db = nil
         print("Unable to open database")
@@ -38,8 +38,7 @@ class DBUtil {
   }
 
   func openExistingDatabase() -> Bool {
-    let resourcePath = NSBundle.mainBundle().resource!.absoluteString
-    let dbPath = resourcePath?.stringAppendingPathComponent(dbFileName)
+    let dbPath = Bundle.main.path(forResource: dbFileName, ofType: "sqlite3")!
 
     do {
       db = try Connection(dbPath)

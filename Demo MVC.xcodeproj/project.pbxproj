@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4250D5011DEEBCED00940383 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250D5001DEEBCED00940383 /* UserTableViewCell.swift */; };
+		4250D50A1DEEDF6C00940383 /* test.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4250D5091DEEDF6C00940383 /* test.sqlite3 */; };
 		427B3A4E1DE9128300D478E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B3A4D1DE9128300D478E9 /* AppDelegate.swift */; };
 		427B3A501DE9128300D478E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B3A4F1DE9128300D478E9 /* ViewController.swift */; };
 		427B3A531DE9128300D478E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427B3A511DE9128300D478E9 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		4250D5001DEEBCED00940383 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4250D5091DEEDF6C00940383 /* test.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.sqlite3; sourceTree = "<group>"; };
 		427B3A4A1DE9128300D478E9 /* Demo MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo MVC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		427B3A4D1DE9128300D478E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427B3A4F1DE9128300D478E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		427B3A411DE9128200D478E9 = {
 			isa = PBXGroup;
 			children = (
+				4250D5091DEEDF6C00940383 /* test.sqlite3 */,
 				427B3A4C1DE9128300D478E9 /* Demo MVC */,
 				427B3A611DE9128300D478E9 /* Demo MVCTests */,
 				427B3A6C1DE9128300D478E9 /* Demo MVCUITests */,
@@ -369,6 +372,7 @@
 				427B3A581DE9128300D478E9 /* LaunchScreen.storyboard in Resources */,
 				427B3A551DE9128300D478E9 /* Assets.xcassets in Resources */,
 				427B3A531DE9128300D478E9 /* Main.storyboard in Resources */,
+				4250D50A1DEEDF6C00940383 /* test.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
