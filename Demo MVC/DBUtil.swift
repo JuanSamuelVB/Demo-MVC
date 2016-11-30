@@ -16,7 +16,7 @@ class DBUtil {
   private let id = Expression<Int64>("id")
   private let first_name = Expression<String?>("first_name")
   private let last_name = Expression<String>("last_name")
-  private let email = Expression<String?>("email")
+  private let email = Expression<String>("email")
 
   private init() {
     let path = NSSearchPathForDirectoriesInDomains(
@@ -44,5 +44,69 @@ class DBUtil {
     } catch {
       print("Unable to create table")
     }
+  }
+
+  func addUser(ufirst_name: String, ulast_name: String, uemail: String) -> Int64? {
+    do {
+      let insert = users.insert(
+        first_name <- ufirst_name, 
+        last_name <- ulast_name,
+        email <- uemail
+      )
+      let id = try db!.run(insert)
+
+      return id
+    } catch {
+      print ("Insert failed")
+      return -1
+    }
+  }
+
+  func getUsers() -> [User] {
+    var users = [User]()
+
+    do {
+      for user in try db!.prepare(self.users) {
+        users.append(User(
+          id: user[id],
+          first_name: user[first_name]!,
+          last_name: user[last_name],
+          email: user[email]))
+        }
+    } catch {
+      print("Select failed")
+    }
+
+    return users
+  }
+
+  func deleteUser(uid: Int64) -> Bool {
+    do {
+      let user = users.filter(id == uid)
+      try db!.run(user.delete())
+      return true
+    } catch {
+      print("Delete failed")
+    }
+    
+    return false
+  }
+
+  func updateUser(uid: Int64, newUser: User) -> Bool {
+    let user = users.filter(id == uid)
+    do {
+      let update = user.update([
+        first_name = newUser.first_name,
+        last_name = newUser.last_name,
+        email = newUser.email
+        ])
+      if try db!.run(update) > 0 {
+        return true
+      }
+    } catch {
+      print("Update failed: \(error)")
+    }
+
+    return false
   }
 }
