@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4250D5011DEEBCED00940383 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250D5001DEEBCED00940383 /* UserTableViewCell.swift */; };
 		427B3A4E1DE9128300D478E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B3A4D1DE9128300D478E9 /* AppDelegate.swift */; };
 		427B3A501DE9128300D478E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427B3A4F1DE9128300D478E9 /* ViewController.swift */; };
 		427B3A531DE9128300D478E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427B3A511DE9128300D478E9 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4250D5001DEEBCED00940383 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		427B3A4A1DE9128300D478E9 /* Demo MVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo MVC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		427B3A4D1DE9128300D478E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427B3A4F1DE9128300D478E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				427B3A4D1DE9128300D478E9 /* AppDelegate.swift */,
 				427B3A4F1DE9128300D478E9 /* ViewController.swift */,
 				427B3A511DE9128300D478E9 /* Main.storyboard */,
+				4250D5001DEEBCED00940383 /* UserTableViewCell.swift */,
 				427B3A541DE9128300D478E9 /* Assets.xcassets */,
 				427B3A561DE9128300D478E9 /* LaunchScreen.storyboard */,
 				427B3A591DE9128300D478E9 /* Info.plist */,
@@ -394,6 +397,7 @@
 				427B3A4E1DE9128300D478E9 /* AppDelegate.swift in Sources */,
 				42C4D7EA1DEE3EA00075B2E4 /* User.swift in Sources */,
 				42C4D7F41DEE59830075B2E4 /* DBUtil.swift in Sources */,
+				4250D5011DEEBCED00940383 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
