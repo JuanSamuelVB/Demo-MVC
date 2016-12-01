@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var votesButton: UIButton!
+    
     @IBOutlet weak var usersTableView: UITableView!
 
     private var users = [User]()
@@ -35,7 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let email = emailTextField.text ?? ""
         
         if DBUtil.instance.addUser(ufirst_name: first_name, ulast_name: last_name, uemail: email) != nil {
-          let user = User(id: 0, first_name: first_name, last_name: last_name, email: email)
+            let user = User(id: 0, first_name: first_name, last_name: last_name, email: email, votes: 0)
           users.append(user)
           usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
         }
@@ -48,7 +50,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
           id: id,
           first_name: firstNameTextField.text ?? "",
           last_name: lastNameTextField.text ?? "",
-          email: emailTextField.text ?? "")
+          email: emailTextField.text ?? "",
+          votes: Int64(votesButton.titleLabel?.text ?? "0")!)
 
           if DBUtil.instance.updateUser(uid: id, newUser: user) {
             users.remove(at: selectedUser!)
@@ -75,6 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         firstNameTextField.text = users[indexPath.row].first_name
         lastNameTextField.text = users[indexPath.row].last_name
         emailTextField.text = users[indexPath.row].email
+        votesButton.titleLabel?.text = String(users[indexPath.row].votes)
         
         selectedUser = indexPath.row
     }
