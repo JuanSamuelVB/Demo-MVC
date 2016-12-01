@@ -50,6 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let user = User(id: id, first_name: first_name, last_name: last_name, email: email, votes: 0)
           users.append(user)
           usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
+            usersTableView.selectRow(at: IndexPath(row: users.count-1, section: 0), animated: true, scrollPosition: .none)
         }
     }
     
