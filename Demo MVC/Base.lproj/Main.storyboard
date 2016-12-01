@@ -89,16 +89,15 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" title="999">
+                                <state key="normal" title="0">
                                     <color key="titleColor" red="0.7142857142857143" green="0.47142857142857142" blue="0.31785714285714284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="votesButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnn-ul-xVG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTp-3W-k6J">
-                                <rect key="frame" x="128" y="142" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTp-3W-k6J">
+                                <rect key="frame" x="135" y="142" width="44" height="30"/>
                                 <state key="normal" title="Nuevo">
                                     <color key="titleColor" red="0.71428571429999999" green="0.4714285714" blue="0.3178571429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -116,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRY-eN-NLN">
-                                <rect key="frame" x="188" y="142" width="55" height="30"/>
+                                <rect key="frame" x="193" y="142" width="55" height="30"/>
                                 <state key="normal" title="Agregar">
                                     <color key="titleColor" red="0.71428571429999999" green="0.4714285714" blue="0.3178571429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -125,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8et-W6-YXQ">
-                                <rect key="frame" x="257" y="142" width="40" height="30"/>
+                                <rect key="frame" x="262" y="142" width="40" height="30"/>
                                 <state key="normal" title="Editar">
                                     <color key="titleColor" red="0.71428571429999999" green="0.4714285714" blue="0.3178571429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -137,6 +136,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i5Q-SU-VZK" secondAttribute="bottom" constant="20" id="1Wm-zy-2Jf"/>
+                            <constraint firstItem="i5Q-SU-VZK" firstAttribute="top" secondItem="QTp-3W-k6J" secondAttribute="bottom" constant="8" id="3EB-OJ-hKy"/>
+                            <constraint firstItem="QTp-3W-k6J" firstAttribute="top" secondItem="PCh-3x-tRt" secondAttribute="bottom" constant="8" id="8lC-th-JDJ"/>
                             <constraint firstItem="8et-W6-YXQ" firstAttribute="top" secondItem="PCh-3x-tRt" secondAttribute="bottom" constant="8" id="ADZ-Vt-xzJ"/>
                             <constraint firstItem="d84-zy-Pwv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="AKW-yu-N2a"/>
                             <constraint firstItem="i5Q-SU-VZK" firstAttribute="top" secondItem="8et-W6-YXQ" secondAttribute="bottom" constant="8" id="C6K-ca-xaK"/>
@@ -146,11 +147,12 @@
                             <constraint firstItem="PCh-3x-tRt" firstAttribute="top" secondItem="O1d-v8-Rzq" secondAttribute="bottom" constant="8" id="Mju-7C-oFa"/>
                             <constraint firstItem="8et-W6-YXQ" firstAttribute="leading" secondItem="NRY-eN-NLN" secondAttribute="trailing" constant="14" id="Orl-XM-Az2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PCh-3x-tRt" secondAttribute="trailing" id="PYe-g1-yaZ"/>
-                            <constraint firstItem="nUT-i8-r2t" firstAttribute="leading" secondItem="8et-W6-YXQ" secondAttribute="trailing" constant="19" id="S4S-gF-Hty"/>
+                            <constraint firstItem="nUT-i8-r2t" firstAttribute="leading" secondItem="8et-W6-YXQ" secondAttribute="trailing" constant="14" id="S4S-gF-Hty"/>
                             <constraint firstItem="i5Q-SU-VZK" firstAttribute="top" secondItem="NRY-eN-NLN" secondAttribute="bottom" constant="8" id="V19-gS-wYd"/>
                             <constraint firstItem="O1d-v8-Rzq" firstAttribute="top" secondItem="ciy-cT-Lwp" secondAttribute="bottom" constant="8" id="Wfc-Bp-XTo"/>
                             <constraint firstItem="d84-zy-Pwv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Zl0-RR-1Jo"/>
                             <constraint firstItem="nUT-i8-r2t" firstAttribute="top" secondItem="PCh-3x-tRt" secondAttribute="bottom" constant="8" id="aXH-Rf-jFf"/>
+                            <constraint firstItem="NRY-eN-NLN" firstAttribute="leading" secondItem="QTp-3W-k6J" secondAttribute="trailing" constant="14" id="jbj-Qb-iu9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ciy-cT-Lwp" secondAttribute="trailing" id="mwm-bk-fUY"/>
                             <constraint firstItem="ciy-cT-Lwp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oG9-mJ-Aez"/>
                             <constraint firstItem="O1d-v8-Rzq" firstAttribute="leading" secondItem="d84-zy-Pwv" secondAttribute="trailing" constant="12" id="qQQ-tt-dtE"/>
