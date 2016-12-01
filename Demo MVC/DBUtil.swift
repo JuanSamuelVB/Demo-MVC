@@ -19,6 +19,7 @@ class DBUtil {
   private let first_name = Expression<String?>("first_name")
   private let last_name = Expression<String>("last_name")
   private let email = Expression<String>("email")
+  private let votes = Expression<Int64>("votes")
 
   private init() {
     if !openExistingDatabase() {
@@ -57,6 +58,7 @@ class DBUtil {
       table.column(first_name)
       table.column(last_name)
       table.column(email)
+      table.column(votes)
       })
     } catch {
       print("Unable to create table")
@@ -68,7 +70,8 @@ class DBUtil {
       let insert = users.insert(
         first_name <- ufirst_name, 
         last_name <- ulast_name,
-        email <- uemail
+        email <- uemail,
+        votes <- 0
       )
       let id = try db!.run(insert)
 
@@ -88,7 +91,8 @@ class DBUtil {
           id: user[id],
           first_name: user[first_name]!,
           last_name: user[last_name],
-          email: user[email]))
+          email: user[email],
+          votes: user[votes]))
         }
     } catch {
       print("Select failed")
@@ -115,7 +119,8 @@ class DBUtil {
       let update = user.update([
         first_name <- newUser.first_name,
         last_name <- newUser.last_name,
-        email <- newUser.email
+        email <- newUser.email,
+        votes <- newUser.votes
         ])
       if try db!.run(update) > 0 {
         return true
