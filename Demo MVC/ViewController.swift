@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        votesButton.layer.cornerRadius = votesButton.bounds.size.width/2;
+        votesButton.layer.borderWidth = 0
+        
         users = DBUtil.instance.getUsers()
     }
 
@@ -31,6 +34,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func newButtonClicked() {
+        firstNameTextField.text = ""
+        lastNameTextField.text = ""
+        emailTextField.text = ""
+        votesButton.setTitle("0", for: .normal)
+    }
+    
     @IBAction func addButtonClicked() {
         let first_name = firstNameTextField.text ?? ""
         let last_name = lastNameTextField.text ?? ""
