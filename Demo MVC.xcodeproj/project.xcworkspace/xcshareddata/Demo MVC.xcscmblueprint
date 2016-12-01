@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A376F0DB-7DBC-4F94-ADDA-DE0D87EE2C6E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "E24ABD635C7731ACC56BD58BC75C84C00EB58696" : "Demo-MVC\/",
+    "E24ABD635C7731ACC56BD58BC75C84C00EB58696" : "Demo%20MVC\/",
     "3AE8ED2E684071AF4FB151FA51BF266B82FF45BD" : "..\/SQLite.swift"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Demo MVC",

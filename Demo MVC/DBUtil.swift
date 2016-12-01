@@ -40,6 +40,7 @@ class DBUtil {
 
   func openExistingDatabase() -> Bool {
     let dbPath = Bundle.main.path(forResource: dbFileName, ofType: "sqlite3")!
+    print("Data base directory: \(dbPath)")
 
     do {
       db = try Connection(dbPath)

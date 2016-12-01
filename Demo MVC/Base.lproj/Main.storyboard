@@ -80,37 +80,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUT-i8-r2t">
-                                <rect key="frame" x="159" y="150" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUT-i8-r2t">
+                                <rect key="frame" x="144" y="150" width="43" height="30"/>
                                 <state key="normal" title="Borrar"/>
                                 <connections>
                                     <action selector="deleteButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gdq-rB-byc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRY-eN-NLN">
-                                <rect key="frame" x="16" y="150" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRY-eN-NLN">
+                                <rect key="frame" x="16" y="150" width="55" height="30"/>
                                 <state key="normal" title="Agregar"/>
                                 <connections>
                                     <action selector="addButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Mq-fk-127"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8et-W6-YXQ">
-                                <rect key="frame" x="94" y="150" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8et-W6-YXQ">
+                                <rect key="frame" x="85" y="150" width="40" height="30"/>
                                 <state key="normal" title="Editar"/>
                                 <connections>
                                     <action selector="updateButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="qwp-dX-eVM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-zy-Pwv">
-                                <rect key="frame" x="258" y="138" width="101" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d84-zy-Pwv">
+                                <rect key="frame" x="293" y="138" width="66" height="59"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <state key="normal" title="100"/>
+                                <connections>
+                                    <action selector="votesButtonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="gnn-ul-xVG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="i5Q-SU-VZK" secondAttribute="bottom" constant="20" id="1Wm-zy-2Jf"/>
+                            <constraint firstItem="8et-W6-YXQ" firstAttribute="top" secondItem="PCh-3x-tRt" secondAttribute="bottom" constant="16" id="CeK-MW-XPD"/>
+                            <constraint firstItem="d84-zy-Pwv" firstAttribute="top" secondItem="PCh-3x-tRt" secondAttribute="bottom" constant="4" id="Eml-MG-gZj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="PCh-3x-tRt" secondAttribute="leading" id="KJD-AE-0vf"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ciy-cT-Lwp" secondAttribute="leading" id="KgZ-rQ-X7B"/>
                             <constraint firstAttribute="leadingMargin" secondItem="i5Q-SU-VZK" secondAttribute="leading" id="Llr-7w-nt5"/>
@@ -120,11 +124,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="PCh-3x-tRt" secondAttribute="trailing" id="PYe-g1-yaZ"/>
                             <constraint firstItem="nUT-i8-r2t" firstAttribute="leading" secondItem="8et-W6-YXQ" secondAttribute="trailing" constant="19" id="S4S-gF-Hty"/>
                             <constraint firstItem="O1d-v8-Rzq" firstAttribute="top" secondItem="ciy-cT-Lwp" secondAttribute="bottom" constant="8" id="Wfc-Bp-XTo"/>
+                            <constraint firstItem="nUT-i8-r2t" firstAttribute="top" secondItem="PCh-3x-tRt" secondAttribute="bottom" constant="16" id="dcu-BM-N1Y"/>
                             <constraint firstAttribute="leadingMargin" secondItem="O1d-v8-Rzq" secondAttribute="leading" id="gDh-Yb-wK0"/>
                             <constraint firstItem="i5Q-SU-VZK" firstAttribute="top" secondItem="NRY-eN-NLN" secondAttribute="bottom" constant="21" id="h6g-Mk-Xo2"/>
                             <constraint firstAttribute="leadingMargin" secondItem="NRY-eN-NLN" secondAttribute="leading" id="mEK-uC-BRR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ciy-cT-Lwp" secondAttribute="trailing" id="mwm-bk-fUY"/>
                             <constraint firstItem="ciy-cT-Lwp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="oG9-mJ-Aez"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d84-zy-Pwv" secondAttribute="trailing" id="trr-Jp-ZNC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O1d-v8-Rzq" secondAttribute="trailing" id="uGN-by-drp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i5Q-SU-VZK" secondAttribute="trailing" id="yu4-fM-cDA"/>
                         </constraints>
@@ -134,7 +140,7 @@
                         <outlet property="firstNameTextField" destination="ciy-cT-Lwp" id="pfK-Nv-DMB"/>
                         <outlet property="lastNameTextField" destination="O1d-v8-Rzq" id="Ew2-fs-aBe"/>
                         <outlet property="usersTableView" destination="i5Q-SU-VZK" id="U6W-eG-Une"/>
-                        <outlet property="votetsButton" destination="d84-zy-Pwv" id="YJt-bq-m0X"/>
+                        <outlet property="votesButton" destination="d84-zy-Pwv" id="fY7-7A-Sbs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
