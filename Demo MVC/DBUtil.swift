@@ -12,7 +12,7 @@ class DBUtil {
   static let instance = DBUtil()
   private var db: Connection?
 
-  private let dbFileName = "test"
+  private let dbFileName = "db"
 
   private let users = Table("users")
   private let id = Expression<Int64>("id")
