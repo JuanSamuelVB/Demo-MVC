@@ -13,9 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    @IBOutlet weak var votesButton: UIButton!
-    
-    @IBOutlet weak var usersTableView: UITableView!
+    @IBOutlet weak var votesButton: UIButton!lkk    @IBOutlet weak var usersTableView: UITableView!
 
     private var users = [User]()
     private var selectedUser: Int?
@@ -48,9 +46,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if let id = DBUtil.instance.addUser(ufirst_name: first_name, ulast_name: last_name, uemail: email) {
             let user = User(id: id, first_name: first_name, last_name: last_name, email: email, votes: 0)
-          users.append(user)
-          usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
+            users.append(user)
+            usersTableView.insertRows(at: [IndexPath(row: users.count-1, section: 0)], with: .fade)
             usersTableView.selectRow(at: IndexPath(row: users.count-1, section: 0), animated: true, scrollPosition: .none)
+            usersTableView.scrollToRow(at: IndexPath(row: users.count-1, section: 0), at: .bottom, animated: true)
         }
     }
     
