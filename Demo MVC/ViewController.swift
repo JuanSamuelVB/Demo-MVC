@@ -13,7 +13,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    @IBOutlet weak var votesButton: UIButton!lkk    @IBOutlet weak var usersTableView: UITableView!
+    @IBOutlet weak var votesButton: UIButton!
+    @IBOutlet weak var usersTableView: UITableView!
 
     private var users = [User]()
     private var selectedUser: Int?
